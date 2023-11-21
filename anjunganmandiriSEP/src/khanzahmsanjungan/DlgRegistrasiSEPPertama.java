@@ -1709,7 +1709,7 @@ public class DlgRegistrasiSEPPertama extends javax.swing.JDialog {
     }//GEN-LAST:event_btnFingerPrintActionPerformed
 
     private void btnFingerPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnFingerPrintKeyPressed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnFingerPrintKeyPressed
 
     private void btnDPJPLayanan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDPJPLayanan1ActionPerformed
