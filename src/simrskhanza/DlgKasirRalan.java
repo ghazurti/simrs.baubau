@@ -76,6 +76,7 @@ import rekammedis.RMChecklistKriteriaMasukICU;
 import rekammedis.RMChecklistPreOperasi;
 import rekammedis.RMDataAsuhanGizi;
 import rekammedis.RMDataCatatanCekGDS;
+import rekammedis.RMDataCatatanKeperawatanRalan;
 import rekammedis.RMDataCatatanObservasiIGD;
 import rekammedis.RMDataMonitoringAsuhanGizi;
 import rekammedis.RMDataMonitoringReaksiTranfusi;
@@ -112,6 +113,7 @@ import rekammedis.RMPenilaianAwalMedisRalanKulitDanKelamin;
 import rekammedis.RMPenilaianAwalMedisRalanMata;
 import rekammedis.RMPenilaianAwalMedisRalanNeurologi;
 import rekammedis.RMPenilaianAwalMedisRalanOrthopedi;
+import rekammedis.RMPenilaianAwalMedisRalanParu;
 import rekammedis.RMPenilaianAwalMedisRalanPenyakitDalam;
 import rekammedis.RMPenilaianAwalMedisRalanPsikiatrik;
 import rekammedis.RMPenilaianAwalMedisRalanRehabMedik;
@@ -635,6 +637,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         MnPenilaianAwalMedisRalanKulitKelamin = new javax.swing.JMenuItem();
         MnPenilaianAwalMedisRalanHemodialisa = new javax.swing.JMenuItem();
         MnPenilaianAwalMedisRalanFisikRehabilitasi = new javax.swing.JMenuItem();
+        MnPenilaianAwalMedisRalanParu = new javax.swing.JMenuItem();
         MnHasilPemeriksaanUSG = new javax.swing.JMenuItem();
         MnDokumentasiTindakanESWL = new javax.swing.JMenuItem();
         MnPenilaianFisioterapi = new javax.swing.JMenuItem();
@@ -676,6 +679,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         MnCatatanCekGDS = new javax.swing.JMenuItem();
         MnMonitoringReaksiTranfusi = new javax.swing.JMenuItem();
         MnPenilaianUlangNyeri = new javax.swing.JMenuItem();
+        MnCatatanKeperawatan = new javax.swing.JMenuItem();
         MnDiagnosa = new javax.swing.JMenuItem();
         MnGizi = new javax.swing.JMenu();
         ppSkriningNutrisiDewasa = new javax.swing.JMenuItem();
@@ -1581,6 +1585,22 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         });
         MnAwalMedis.add(MnPenilaianAwalMedisRalanFisikRehabilitasi);
 
+        MnPenilaianAwalMedisRalanParu.setBackground(new java.awt.Color(255, 255, 254));
+        MnPenilaianAwalMedisRalanParu.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnPenilaianAwalMedisRalanParu.setForeground(new java.awt.Color(50, 50, 50));
+        MnPenilaianAwalMedisRalanParu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnPenilaianAwalMedisRalanParu.setText("Penilaian Awal Medis Paru");
+        MnPenilaianAwalMedisRalanParu.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnPenilaianAwalMedisRalanParu.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnPenilaianAwalMedisRalanParu.setName("MnPenilaianAwalMedisRalanParu"); // NOI18N
+        MnPenilaianAwalMedisRalanParu.setPreferredSize(new java.awt.Dimension(310, 26));
+        MnPenilaianAwalMedisRalanParu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnPenilaianAwalMedisRalanParuActionPerformed(evt);
+            }
+        });
+        MnAwalMedis.add(MnPenilaianAwalMedisRalanParu);
+
         MnRMRawatJalan.add(MnAwalMedis);
 
         MnHasilPemeriksaanUSG.setBackground(new java.awt.Color(255, 255, 254));
@@ -2214,6 +2234,22 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
             }
         });
         MnRMCatatanMonitoring.add(MnPenilaianUlangNyeri);
+
+        MnCatatanKeperawatan.setBackground(new java.awt.Color(255, 255, 254));
+        MnCatatanKeperawatan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnCatatanKeperawatan.setForeground(new java.awt.Color(50, 50, 50));
+        MnCatatanKeperawatan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnCatatanKeperawatan.setText("Catatan Keperawatan");
+        MnCatatanKeperawatan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnCatatanKeperawatan.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnCatatanKeperawatan.setName("MnCatatanKeperawatan"); // NOI18N
+        MnCatatanKeperawatan.setPreferredSize(new java.awt.Dimension(210, 26));
+        MnCatatanKeperawatan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnCatatanKeperawatanActionPerformed(evt);
+            }
+        });
+        MnRMCatatanMonitoring.add(MnCatatanKeperawatan);
 
         MnDataRM.add(MnRMCatatanMonitoring);
 
@@ -6186,7 +6222,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         panelBiasa2.setLayout(null);
 
         TglSakit1.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-11-2023" }));
+        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-11-2023" }));
         TglSakit1.setDisplayFormat("dd-MM-yyyy");
         TglSakit1.setName("TglSakit1"); // NOI18N
         TglSakit1.setOpaque(false);
@@ -6233,7 +6269,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel32.setBounds(176, 10, 20, 23);
 
         TglSakit2.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-11-2023" }));
+        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-11-2023" }));
         TglSakit2.setDisplayFormat("dd-MM-yyyy");
         TglSakit2.setName("TglSakit2"); // NOI18N
         TglSakit2.setOpaque(false);
@@ -6505,7 +6541,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel15.setPreferredSize(new java.awt.Dimension(70, 23));
         panelGlass8.add(jLabel15);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-11-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-11-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -6518,7 +6554,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel17.setPreferredSize(new java.awt.Dimension(23, 23));
         panelGlass8.add(jLabel17);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-11-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-11-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -13693,6 +13729,51 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
         }
     }//GEN-LAST:event_MnPengkajianRestrainActionPerformed
 
+    private void MnCatatanKeperawatanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCatatanKeperawatanActionPerformed
+        if(tabModekasir.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            TCari.requestFocus();
+        }else if(TNoRw.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            tbKasirRalan.requestFocus();
+        }else{
+            if(tbKasirRalan.getSelectedRow()!= -1){
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                RMDataCatatanKeperawatanRalan form=new RMDataCatatanKeperawatanRalan(null,false);
+                form.isCek();
+                form.emptTeks();
+                form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
+                form.tampil();
+                form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                form.setLocationRelativeTo(internalFrame1);
+                form.setVisible(true);
+                this.setCursor(Cursor.getDefaultCursor());
+            }
+        }
+    }//GEN-LAST:event_MnCatatanKeperawatanActionPerformed
+
+    private void MnPenilaianAwalMedisRalanParuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnPenilaianAwalMedisRalanParuActionPerformed
+        if(tabModekasir.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            //TNoReg.requestFocus();
+        }else if(TNoRw.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            tbKasirRalan.requestFocus();
+        }else{
+            if(tbKasirRalan.getSelectedRow()!= -1){
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                RMPenilaianAwalMedisRalanParu form=new RMPenilaianAwalMedisRalanParu(null,false);
+                form.isCek();
+                form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                form.setLocationRelativeTo(internalFrame1);
+                form.setVisible(true);
+                form.emptTeks();
+                form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
+                this.setCursor(Cursor.getDefaultCursor());
+            }
+        }
+    }//GEN-LAST:event_MnPenilaianAwalMedisRalanParuActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -13758,6 +13839,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private javax.swing.JMenuItem MnBillingParsial;
     private javax.swing.JMenu MnBridging;
     private javax.swing.JMenuItem MnCatatanCekGDS;
+    private javax.swing.JMenuItem MnCatatanKeperawatan;
     private javax.swing.JMenuItem MnCatatanObservasiIGD;
     private javax.swing.JMenuItem MnCetakBebasNarkoba;
     private javax.swing.JMenuItem MnCetakSuratBebasTBC;
@@ -13886,6 +13968,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private javax.swing.JMenuItem MnPenilaianAwalMedisRalanMata;
     private javax.swing.JMenuItem MnPenilaianAwalMedisRalanNeurologi;
     private javax.swing.JMenuItem MnPenilaianAwalMedisRalanOrthopedi;
+    private javax.swing.JMenuItem MnPenilaianAwalMedisRalanParu;
     private javax.swing.JMenuItem MnPenilaianAwalMedisRalanPenyakitDalam;
     private javax.swing.JMenuItem MnPenilaianAwalMedisRalanPsikiatri;
     private javax.swing.JMenuItem MnPenilaianAwalMedisRalanTHT;

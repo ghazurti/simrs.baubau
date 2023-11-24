@@ -96,6 +96,7 @@ import rekammedis.RMChecklistPostOperasi;
 import rekammedis.RMChecklistPreOperasi;
 import rekammedis.RMDataAsuhanGizi;
 import rekammedis.RMDataCatatanCekGDS;
+import rekammedis.RMDataCatatanKeperawatanRalan;
 import rekammedis.RMDataCatatanObservasiIGD;
 import rekammedis.RMDataMonitoringAsuhanGizi;
 import rekammedis.RMDataMonitoringReaksiTranfusi;
@@ -690,6 +691,7 @@ public final class DlgIGD extends javax.swing.JDialog {
         MnCatatanCekGDS = new javax.swing.JMenuItem();
         MnMonitoringReaksiTranfusi = new javax.swing.JMenuItem();
         MnPenilaianUlangNyeri = new javax.swing.JMenuItem();
+        MnCatatanKeperawatan1 = new javax.swing.JMenuItem();
         MnGizi = new javax.swing.JMenu();
         ppSkriningNutrisiDewasa = new javax.swing.JMenuItem();
         ppSkriningNutrisiLansia = new javax.swing.JMenuItem();
@@ -1704,6 +1706,22 @@ public final class DlgIGD extends javax.swing.JDialog {
             }
         });
         MnRMCatatanMonitoring.add(MnPenilaianUlangNyeri);
+
+        MnCatatanKeperawatan1.setBackground(new java.awt.Color(255, 255, 254));
+        MnCatatanKeperawatan1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnCatatanKeperawatan1.setForeground(new java.awt.Color(50, 50, 50));
+        MnCatatanKeperawatan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnCatatanKeperawatan1.setText("Catatan Keperawatan");
+        MnCatatanKeperawatan1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnCatatanKeperawatan1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnCatatanKeperawatan1.setName("MnCatatanKeperawatan1"); // NOI18N
+        MnCatatanKeperawatan1.setPreferredSize(new java.awt.Dimension(210, 26));
+        MnCatatanKeperawatan1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnCatatanKeperawatan1ActionPerformed(evt);
+            }
+        });
+        MnRMCatatanMonitoring.add(MnCatatanKeperawatan1);
 
         MnDataRM.add(MnRMCatatanMonitoring);
 
@@ -4617,7 +4635,7 @@ public final class DlgIGD extends javax.swing.JDialog {
         panelGlass7.add(jLabel15);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-10-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -4631,7 +4649,7 @@ public final class DlgIGD extends javax.swing.JDialog {
         panelGlass7.add(jLabel17);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-10-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -4723,7 +4741,7 @@ public final class DlgIGD extends javax.swing.JDialog {
         jLabel9.setBounds(165, 72, 36, 23);
 
         DTPReg.setForeground(new java.awt.Color(50, 70, 50));
-        DTPReg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-09-2023" }));
+        DTPReg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-10-2023" }));
         DTPReg.setDisplayFormat("dd-MM-yyyy");
         DTPReg.setName("DTPReg"); // NOI18N
         DTPReg.setOpaque(false);
@@ -10585,6 +10603,29 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
         }
     }//GEN-LAST:event_MnPenilaianUlangNyeriActionPerformed
 
+    private void MnCatatanKeperawatan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCatatanKeperawatan1ActionPerformed
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, data registrasi sudah habis...!!!!");
+            TNoRM.requestFocus();
+        }else if(TPasien.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu data pasien dengan menklik data pada table...!!!");
+            tbPetugas.requestFocus();
+        }else{
+            if(tbPetugas.getSelectedRow()!= -1){
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                RMDataCatatanKeperawatanRalan form=new RMDataCatatanKeperawatanRalan(null,false);
+                form.isCek();
+                form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                form.setLocationRelativeTo(internalFrame1);
+                form.setVisible(true);
+                form.emptTeks();
+                form.setNoRm(TNoRw.getText(),DTPCari2.getDate());
+                form.tampil();
+                this.setCursor(Cursor.getDefaultCursor());
+            }
+        }
+    }//GEN-LAST:event_MnCatatanKeperawatan1ActionPerformed
+
     /**
     * @data args the command line arguments
     */
@@ -10655,6 +10696,8 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
     private javax.swing.JMenuItem MnBlangkoResep;
     private javax.swing.JMenu MnBridging;
     private javax.swing.JMenuItem MnCatatanCekGDS;
+    private javax.swing.JMenuItem MnCatatanKeperawatan;
+    private javax.swing.JMenuItem MnCatatanKeperawatan1;
     private javax.swing.JMenuItem MnCatatanObservasiIGD;
     private javax.swing.JMenuItem MnCetakBebasNarkoba;
     private javax.swing.JMenuItem MnCetakRegister;
