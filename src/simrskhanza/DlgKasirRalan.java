@@ -84,6 +84,7 @@ import rekammedis.RMDataSkriningGiziLanjut;
 import rekammedis.RMHemodialisa;
 import rekammedis.RMDeteksiDiniCorona;
 import rekammedis.RMEdukasiPasienKeluargaRawatJalan;
+import rekammedis.RMGenerateKlaim;
 import rekammedis.RMHasilPemeriksaanUSG;
 import rekammedis.RMHasilTindakanESWL;
 import rekammedis.RMKonselingFarmasi;
@@ -869,6 +870,8 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         MnHapusReturObat = new javax.swing.JMenuItem();
         MnHapusStokObatRanap = new javax.swing.JMenuItem();
         MnHapusSemua = new javax.swing.JMenuItem();
+        ppTampilkanSEP = new javax.swing.JMenuItem();
+        ppGenerateBerkasKlaim = new javax.swing.JMenuItem();
         TNoRw = new widget.TextBox();
         WindowObatBhp = new javax.swing.JDialog();
         internalFrame2 = new widget.InternalFrame();
@@ -5182,6 +5185,40 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         MnHapusData.add(MnHapusSemua);
 
         jPopupMenu1.add(MnHapusData);
+
+        ppTampilkanSEP.setBackground(new java.awt.Color(255, 255, 254));
+        ppTampilkanSEP.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        ppTampilkanSEP.setForeground(new java.awt.Color(50, 50, 50));
+        ppTampilkanSEP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        ppTampilkanSEP.setText("Tampilkan SEP BPJS");
+        ppTampilkanSEP.setToolTipText("");
+        ppTampilkanSEP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ppTampilkanSEP.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        ppTampilkanSEP.setName("ppTampilkanSEP"); // NOI18N
+        ppTampilkanSEP.setPreferredSize(new java.awt.Dimension(200, 26));
+        ppTampilkanSEP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppTampilkanSEPBtnPrintActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(ppTampilkanSEP);
+
+        ppGenerateBerkasKlaim.setBackground(new java.awt.Color(255, 255, 254));
+        ppGenerateBerkasKlaim.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        ppGenerateBerkasKlaim.setForeground(new java.awt.Color(50, 50, 50));
+        ppGenerateBerkasKlaim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        ppGenerateBerkasKlaim.setText("Generate Berkas Klaim");
+        ppGenerateBerkasKlaim.setToolTipText("");
+        ppGenerateBerkasKlaim.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ppGenerateBerkasKlaim.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        ppGenerateBerkasKlaim.setName("ppGenerateBerkasKlaim"); // NOI18N
+        ppGenerateBerkasKlaim.setPreferredSize(new java.awt.Dimension(200, 26));
+        ppGenerateBerkasKlaim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppGenerateBerkasKlaimBtnPrintActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(ppGenerateBerkasKlaim);
 
         TNoRw.setHighlighter(null);
         TNoRw.setName("TNoRw"); // NOI18N
@@ -13774,6 +13811,41 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
         }
     }//GEN-LAST:event_MnPenilaianAwalMedisRalanParuActionPerformed
 
+    private void ppTampilkanSEPBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppTampilkanSEPBtnPrintActionPerformed
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        Map<String, Object> param = new HashMap<>();
+        param.put("namars",akses.getnamars());
+        param.put("alamatrs",akses.getalamatrs());
+        param.put("kotars",akses.getkabupatenrs());
+        param.put("propinsirs",akses.getpropinsirs());
+        param.put("kontakrs",akses.getkontakrs());
+        param.put("norawat",TNoRwCari.getText());
+        param.put("noreg",Sequel.cariIsi("select no_reg from reg_periksa where no_rawat=?",TNoRwCari.getText()));
+        param.put("prb",Sequel.cariIsi("select bpjs_prb.prb from bpjs_prb where bpjs_prb.no_sep=?",tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),20).toString()));
+        param.put("logo",Sequel.cariGambar("select gambar.bpjs from gambar"));
+        param.put("parameter",tbKasirRalan.getValueAt(tbKasirRalan.getSelectedRow(),20).toString());
+        Valid.MyReport("rptBridgingSEP5.jasper","report","::[ Cetak SEP ]::",param);
+        this.setCursor(Cursor.getDefaultCursor());
+    }//GEN-LAST:event_ppTampilkanSEPBtnPrintActionPerformed
+
+    private void ppGenerateBerkasKlaimBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppGenerateBerkasKlaimBtnPrintActionPerformed
+        if(tabModekasir.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            TCari.requestFocus();
+        }else{
+            if(tbKasirRalan.getSelectedRow()!= -1){
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                RMGenerateKlaim resume=new RMGenerateKlaim(null,true);
+                resume.setNoRm(TNoRMCari.getText(),TPasienCari.getText());
+                resume.setNoRawat(TNoRw.getText());
+                resume.setSize(internalFrame1.getWidth(),internalFrame1.getHeight());
+                resume.setLocationRelativeTo(internalFrame1);
+                resume.setVisible(true);
+                this.setCursor(Cursor.getDefaultCursor());
+            }
+        }
+    }//GEN-LAST:event_ppGenerateBerkasKlaimBtnPrintActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -14187,6 +14259,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private javax.swing.JMenuItem ppCatatanPasien;
     private javax.swing.JMenuItem ppDataIndukKecelakaan;
     private javax.swing.JMenuItem ppDeteksiDIniCorona;
+    private javax.swing.JMenuItem ppGenerateBerkasKlaim;
     private javax.swing.JMenuItem ppIKP;
     private javax.swing.JMenuItem ppIKP1;
     private javax.swing.JMenuItem ppMasukPoli;
@@ -14205,6 +14278,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private javax.swing.JMenuItem ppSuratKontrol;
     private javax.swing.JMenuItem ppSuratPRI;
     private javax.swing.JMenuItem ppTampilkanBelumDiagnosa;
+    private javax.swing.JMenuItem ppTampilkanSEP;
     private javax.swing.JMenuItem ppTampilkanSeleksi;
     private widget.Table tbKasirRalan;
     private widget.Table tbKasirRalan2;
