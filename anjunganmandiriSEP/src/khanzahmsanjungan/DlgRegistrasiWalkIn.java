@@ -634,9 +634,9 @@ public class DlgRegistrasiWalkIn extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(rootPane, "Pilih poli terlebih dahulu");
         } else if (kode_dokter == "") {
             JOptionPane.showMessageDialog(rootPane, "Pilih Dokter terlebih dahulu");
-        } else if (Sequel.cariInteger("select count(jadwal_cuti_libur.kd_dokter) from jadwal_cuti_libur where jadwal_cuti_libur.tanggallibur='" + Valid.SetTgl(TanggalPeriksa.getSelectedItem().toString() + "") + "' and jadwal_cuti_libur.kd_dokter='" + kode_dokter + "' and jadwal_cuti_libur.kd_poli='" + kode_poli + "' ") > 0) {
-            JOptionPane.showMessageDialog(rootPane, "Maaf, dokter  tidak berpraktek pada tanggal yang anda pilih ");
-        } else if (Sequel.cariInteger("select count(no_rkm_medis) from reg_periksa where kd_pj='A09' and no_rkm_medis='" + lblNoRM.getText() + "' and kd_poli='" + kode_poli + "' and kd_dokter='" + kode_dokter + "' and tgl_registrasi='" + Valid.SetTgl(TanggalPeriksa.getSelectedItem() + "") + "' ") > 0) {
+        //} else if (Sequel.cariInteger("select count(jadwal_cuti_libur.kd_dokter) from jadwal_cuti_libur where jadwal_cuti_libur.tanggallibur='" + Valid.SetTgl(TanggalPeriksa.getSelectedItem().toString() + "") + "' and jadwal_cuti_libur.kd_dokter='" + kode_dokter + "' and jadwal_cuti_libur.kd_poli='" + kode_poli + "' ") > 0) {
+           // JOptionPane.showMessageDialog(rootPane, "Maaf, dokter  tidak berpraktek pada tanggal yang anda pilih ");
+        } else if (Sequel.cariInteger("select count(no_rkm_medis) from reg_periksa where kd_pj='UMU' and no_rkm_medis='" + lblNoRM.getText() + "' and kd_poli='" + kode_poli + "' and kd_dokter='" + kode_dokter + "' and tgl_registrasi='" + Valid.SetTgl(TanggalPeriksa.getSelectedItem() + "") + "' ") > 0) {
             JOptionPane.showMessageDialog(rootPane, "Maaf, anda sudah terdaftar pada hari ini dengan dokter yang sama ");
         } else {
             isNumber();
@@ -646,7 +646,7 @@ public class DlgRegistrasiWalkIn extends javax.swing.JDialog {
             if (Sequel.menyimpantf2("reg_periksa", "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?", "No.Rawat", 19,
                     new String[]{NoReg.getText(), NoRawat.getText(), Valid.SetTgl(TanggalPeriksa.getSelectedItem() + ""), Sequel.cariIsi("select current_time()"),
                         kode_dokter, lblNoRM.getText(), kode_poli, TPngJwb.getText(), TAlmt.getText(), THbngn.getText(), biayareg, "Belum",
-                        "Lama", "Ralan", "A09", umur, sttsumur, "Belum Bayar", status}) == true) {
+                        "Lama", "Ralan", "UMU", umur, sttsumur, "Belum Bayar", status}) == true) {
                 MnCetakRegisterActionPerformed(NoRawat.getText());
                 NoReg.setText("");
                 TNoRw.setText("");
@@ -855,7 +855,7 @@ public class DlgRegistrasiWalkIn extends javax.swing.JDialog {
             file.createNewFile();
             fileWriter = new FileWriter(file);
             iyem = "";
-            ps = koneksi.prepareStatement("select * from penjab where status='1' AND kd_pj='A09' order by kd_pj");
+            ps = koneksi.prepareStatement("select * from penjab where status='1' AND kd_pj='UMU' order by kd_pj");
             cmbCaraBayar.removeAllItems();
             try {
                 rs = ps.executeQuery();

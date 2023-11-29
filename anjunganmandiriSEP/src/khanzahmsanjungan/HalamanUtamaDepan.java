@@ -103,7 +103,6 @@ public class HalamanUtamaDepan extends javax.swing.JFrame {
 
         btnAdmin2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/selfservice.png"))); // NOI18N
         btnAdmin2.setText("PENDAFTARAN POLIKLINIK");
-        btnAdmin2.setEnabled(false);
         btnAdmin2.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
         btnAdmin2.setIconTextGap(0);
         btnAdmin2.setPreferredSize(new java.awt.Dimension(200, 90));
