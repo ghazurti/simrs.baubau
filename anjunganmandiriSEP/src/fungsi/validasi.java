@@ -1252,4 +1252,8 @@ public final class validasi {
         }
     }
 
+    public boolean ValidasiRegistrasi(String kodepolireg, String kodedokterreg, String text, String SetTgl, String text0) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

@@ -232,4 +232,8 @@ public final class DlgCariDokter2 extends javax.swing.JDialog {
     private void tampil2() {
 
     }
+
+    void tampilDokterTerapi(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

@@ -51,6 +51,7 @@ import widget.ComboBox;
 import widget.Tanggal;
 import widget.TextArea;
 import java.io.File;
+import widget.TextBox;
 /**
  *
  * @author Owner
@@ -1429,5 +1430,13 @@ public final class validasi {
      */
     public static int milliToDay(long milli) {
         return (int) ((double) milli / (1000 * 24 * 60 * 60));
+    }
+
+    public void pindah2(KeyEvent evt, Button BtnDokter, TextBox WaktuPersalinanKala1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void pindah2(KeyEvent evt, TextArea Pengobatan, Tanggal WaktuSelesai) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

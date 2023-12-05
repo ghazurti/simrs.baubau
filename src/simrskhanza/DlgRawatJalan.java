@@ -65,6 +65,7 @@ import rekammedis.RMDataResumePasien;
 import permintaan.DlgPermintaanLaboratorium;
 import permintaan.DlgPermintaanPelayananInformasiObat;
 import permintaan.DlgPermintaanRadiologi;
+import rekammedis.DlgOdontogram;
 import rekammedis.MasterCariTemplatePemeriksaan;
 import rekammedis.RMCari5SOAPTerakhir;
 import rekammedis.RMCatatanADIMEGizi;
@@ -1694,6 +1695,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         BtnCopyResep = new widget.Button();
         BtnResepLuar = new widget.Button();
         BtnInputObat = new widget.Button();
+        BtnOdontogram = new widget.Button();
         BtnObatBhp = new widget.Button();
         BtnBerkasDigital = new widget.Button();
         BtnPermintaanLab = new widget.Button();
@@ -1960,7 +1962,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-11-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-11-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1974,7 +1976,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-11-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-11-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -4770,7 +4772,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel23.setBounds(554, 10, 60, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-11-2023" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-11-2023" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -4951,6 +4953,28 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         FormMenu.add(BtnInputObat);
+
+        BtnOdontogram.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
+        BtnOdontogram.setText("Odontogram");
+        BtnOdontogram.setFocusPainted(false);
+        BtnOdontogram.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        BtnOdontogram.setGlassColor(new java.awt.Color(255, 255, 255));
+        BtnOdontogram.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnOdontogram.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        BtnOdontogram.setName("BtnOdontogram"); // NOI18N
+        BtnOdontogram.setPreferredSize(new java.awt.Dimension(190, 23));
+        BtnOdontogram.setRoundRect(false);
+        BtnOdontogram.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnOdontogramActionPerformed(evt);
+            }
+        });
+        BtnOdontogram.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                BtnOdontogramKeyPressed(evt);
+            }
+        });
+        FormMenu.add(BtnOdontogram);
 
         BtnObatBhp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/item.png"))); // NOI18N
         BtnObatBhp.setText("Data Obat & BHP");
@@ -10417,6 +10441,27 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         }
     }//GEN-LAST:event_BtnAwalMedisParuActionPerformed
 
+    private void BtnOdontogramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnOdontogramActionPerformed
+        if(TNoRw.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            TCari.requestFocus();
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            DlgOdontogram odontogram=new DlgOdontogram(null,false);
+            odontogram.isCek();
+            odontogram.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            odontogram.setLocationRelativeTo(internalFrame1);
+            odontogram.setNoRm(TNoRw.getText(),DTPCari2.getDate());
+            odontogram.tampil();
+            odontogram.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_BtnOdontogramActionPerformed
+
+    private void BtnOdontogramKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnOdontogramKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnOdontogramKeyPressed
+
     /**
     * @param args the command line arguments
     */
@@ -10493,6 +10538,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.Button BtnMonitoringAsuhanGizi;
     private widget.Button BtnMonitoringReaksiTranfusi;
     private widget.Button BtnObatBhp;
+    private widget.Button BtnOdontogram;
     private widget.Button BtnPemantauanEWSNeonatus;
     private widget.Button BtnPemantauanMEOWS;
     private widget.Button BtnPemantauanPEWSAnak;
