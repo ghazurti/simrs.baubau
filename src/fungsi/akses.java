@@ -217,7 +217,8 @@ public final class akses {
             penilaian_medis_ralan_gawat_darurat_psikiatri=false,bpjs_referensi_setting_apotek=false,bpjs_referensi_obat_apotek=false,bpjs_mapping_obat_apotek=false,
             pembayaran_bank_mandiri=false,penilaian_ulang_nyeri=false,penilaian_terapi_wicara=false,bpjs_obat_23hari_apotek=false,pengkajian_restrain=false,
             bpjs_kunjungan_sep_apotek=false,bpjs_monitoring_klaim_apotek=false,bpjs_daftar_pelayanan_obat_apotek=false,penilaian_awal_medis_ralan_paru=false,
-            catatan_keperawatan_ralan=false,catatan_persalinan=false,skor_aldrette_pasca_anestesi=false,skor_steward_pasca_anestesi=false;
+            catatan_keperawatan_ralan=false,catatan_persalinan=false,skor_aldrette_pasca_anestesi=false,skor_steward_pasca_anestesi=false,skor_bromage_pasca_anestesi=false,
+            penilaian_pre_induksi=false;
     
     public static void setData(String user, String pass) {
         try {        
@@ -1234,6 +1235,8 @@ public final class akses {
                         akses.catatan_persalinan=true;
                         akses.skor_aldrette_pasca_anestesi=true;
                         akses.skor_steward_pasca_anestesi=true;
+                        akses.skor_bromage_pasca_anestesi=true;
+                        akses.penilaian_pre_induksi=true;
                     }else if(rs2.getRow()>=1){   
                         rs2.beforeFirst();
                         rs2.next();
@@ -2234,6 +2237,8 @@ public final class akses {
                         akses.catatan_persalinan=rs2.getBoolean("catatan_persalinan");
                         akses.skor_aldrette_pasca_anestesi=rs2.getBoolean("skor_aldrette_pasca_anestesi");
                         akses.skor_steward_pasca_anestesi=rs2.getBoolean("skor_steward_pasca_anestesi");
+                        akses.skor_bromage_pasca_anestesi=rs2.getBoolean("skor_bromage_pasca_anestesi");
+                        akses.penilaian_pre_induksi=rs2.getBoolean("penilaian_pre_induksi");
                     }else if((rs.getRow()==0)&&(rs2.getRow()==0)){
                         akses.kode="";                  
                         akses.penyakit= false;
@@ -3232,6 +3237,8 @@ public final class akses {
                         akses.catatan_persalinan=false;
                         akses.skor_aldrette_pasca_anestesi=false;
                         akses.skor_steward_pasca_anestesi=false;
+                        akses.skor_bromage_pasca_anestesi=false;
+                        akses.penilaian_pre_induksi=false;
                     }
                 } catch (Exception e) {
                     System.out.println("Notifikasi : "+e);
@@ -4253,6 +4260,8 @@ public final class akses {
         akses.catatan_persalinan=false;
         akses.skor_aldrette_pasca_anestesi=false;
         akses.skor_steward_pasca_anestesi=false;
+        akses.skor_bromage_pasca_anestesi=false;
+        akses.penilaian_pre_induksi=false;
     }
     
     public static int getjml1() {return akses.jml1;}    
@@ -5290,4 +5299,6 @@ public final class akses {
     public static boolean getcatatan_persalinan(){return akses.catatan_persalinan;}
     public static boolean getskor_aldrette_pasca_anestesi(){return akses.skor_aldrette_pasca_anestesi;}
     public static boolean getskor_steward_pasca_anestesi(){return akses.skor_steward_pasca_anestesi;}
+    public static boolean getskor_bromage_pasca_anestesi(){return akses.skor_bromage_pasca_anestesi;}
+    public static boolean getpenilaian_pre_induksi(){return akses.penilaian_pre_induksi;}
 }   
