@@ -1422,4 +1422,54 @@ public class koneksiDB {
         }
         return var;
     }
+     public static String URLFINGERPRINTBPJS() {
+        try {
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var = prop.getProperty("URLFINGERPRINTBPJS");
+        } catch (Exception e) {
+            var = "";
+        }
+        return var;
+    }
+
+    public static String URLAPLIKASIFINGERPRINTBPJS() {
+        try {
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var = prop.getProperty("URLAPLIKASIFINGERPRINTBPJS");
+        } catch (Exception e) {
+            var = "";
+        }
+        return var;
+    }
+
+    public static String URLAPLIKASIFINGERPRINTBPJSV2() {
+        try {
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var = prop.getProperty("URLAPLIKASIFINGERPRINTBPJSV2");
+        } catch (Exception e) {
+            var = "";
+        }
+        return var;
+    }
+
+    public static String USERFINGERPRINTBPJS() {
+        try {
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var = EnkripsiAES.decrypt(prop.getProperty("USERFINGERPRINTBPJS"));
+        } catch (Exception e) {
+            var = "";
+        }
+        return var;
+    }
+
+    public static String PASSWORDFINGERPRINTBPJS() {
+        try {
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var = EnkripsiAES.decrypt(prop.getProperty("PASSWORDFINGERPRINTBPJS"));
+        } catch (Exception e) {
+            var = "";
+        }
+        return var;
+    }
+
 }
