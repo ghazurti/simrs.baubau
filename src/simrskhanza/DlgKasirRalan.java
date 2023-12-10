@@ -6698,7 +6698,6 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         tbKasirRalan.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tbKasirRalan.setName("tbKasirRalan"); // NOI18N
         tbKasirRalan.setPreferredScrollableViewportSize(new java.awt.Dimension(450, 450));
-        tbKasirRalan.setRowHeight(60);
         tbKasirRalan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbKasirRalanMouseClicked(evt);

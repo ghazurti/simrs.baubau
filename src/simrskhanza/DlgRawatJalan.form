@@ -297,7 +297,7 @@
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="07-12-2023"/>
+                        <StringItem index="0" value="10-12-2023"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -325,7 +325,7 @@
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="07-12-2023"/>
+                        <StringItem index="0" value="10-12-2023"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -1662,6 +1662,14 @@
                         </Component>
                         <Component class="widget.ComboBox" name="cmbKesadaran">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
+                            </Property>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="4">
                                 <StringItem index="0" value="Compos Mentis"/>
@@ -1937,6 +1945,11 @@
                         </Component>
                         <Component class="widget.Button" name="Btn5Soap1">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="0" red="0" type="rgb"/>
                             </Property>
@@ -1950,7 +1963,7 @@
                               <Font name="Tahoma" size="11" style="0"/>
                             </Property>
                             <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="0" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="name" type="java.lang.String" value="Btn5Soap1" noResource="true"/>
@@ -1966,6 +1979,11 @@
                         </Component>
                         <Component class="widget.Button" name="Btn5Soap2">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="0" red="0" type="rgb"/>
                             </Property>
@@ -1979,7 +1997,7 @@
                               <Font name="Tahoma" size="11" style="0"/>
                             </Property>
                             <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="0" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="name" type="java.lang.String" value="Btn5Soap2" noResource="true"/>
@@ -1995,6 +2013,11 @@
                         </Component>
                         <Component class="widget.Button" name="BtnHasilRadiologi">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="0" red="0" type="rgb"/>
                             </Property>
@@ -2008,7 +2031,7 @@
                               <Font name="Tahoma" size="11" style="0"/>
                             </Property>
                             <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="0" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="name" type="java.lang.String" value="BtnHasilRadiologi" noResource="true"/>
@@ -2024,6 +2047,11 @@
                         </Component>
                         <Component class="widget.Button" name="BtnHasilPengobatan">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/picture/Vial-Pills.png"/>
                             </Property>
@@ -2034,7 +2062,7 @@
                               <Font name="Tahoma" size="11" style="0"/>
                             </Property>
                             <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="0" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="name" type="java.lang.String" value="BtnHasilPengobatan" noResource="true"/>
@@ -2050,6 +2078,11 @@
                         </Component>
                         <Component class="widget.Button" name="BtnHasilPengobatan1">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/picture/Surgeon SH.png"/>
                             </Property>
@@ -2060,7 +2093,7 @@
                               <Font name="Tahoma" size="11" style="0"/>
                             </Property>
                             <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="0" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="name" type="java.lang.String" value="BtnHasilPengobatan1" noResource="true"/>
@@ -2076,6 +2109,11 @@
                         </Component>
                         <Component class="widget.Button" name="BtnInputResep">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="0" red="0" type="rgb"/>
                             </Property>
@@ -2089,7 +2127,7 @@
                               <Font name="Tahoma" size="11" style="0"/>
                             </Property>
                             <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="0" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="name" type="java.lang.String" value="BtnInputResep" noResource="true"/>
@@ -2105,6 +2143,11 @@
                         </Component>
                         <Component class="widget.Button" name="BtnInputLAB">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="0" red="0" type="rgb"/>
                             </Property>
@@ -2118,7 +2161,7 @@
                               <Font name="Tahoma" size="11" style="0"/>
                             </Property>
                             <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="0" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="name" type="java.lang.String" value="BtnInputLAB" noResource="true"/>
@@ -2134,6 +2177,11 @@
                         </Component>
                         <Component class="widget.Button" name="BtnInputKonsul">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="0" red="0" type="rgb"/>
                             </Property>
@@ -2147,7 +2195,7 @@
                               <Font name="Tahoma" size="11" style="0"/>
                             </Property>
                             <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="0" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="name" type="java.lang.String" value="BtnInputKonsul" noResource="true"/>
@@ -2157,12 +2205,17 @@
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="1090" y="30" width="160" height="26"/>
+                              <AbsoluteConstraints x="1090" y="60" width="160" height="26"/>
                             </Constraint>
                           </Constraints>
                         </Component>
                         <Component class="widget.Button" name="BtnInputTerimaPasienAntarRuang">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="0" red="0" type="rgb"/>
                             </Property>
@@ -2176,7 +2229,7 @@
                               <Font name="Tahoma" size="11" style="0"/>
                             </Property>
                             <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="ff" type="rgb"/>
+                              <Color blue="ff" green="ff" red="0" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="name" type="java.lang.String" value="BtnInputTerimaPasienAntarRuang" noResource="true"/>
@@ -2186,12 +2239,17 @@
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="1090" y="60" width="160" height="26"/>
+                              <AbsoluteConstraints x="1090" y="90" width="160" height="26"/>
                             </Constraint>
                           </Constraints>
                         </Component>
                         <Component class="widget.Button" name="BtnInputKonsul1">
                           <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="0" red="0" type="rgb"/>
                             </Property>
@@ -2205,7 +2263,7 @@
                               <Font name="Tahoma" size="11" style="0"/>
                             </Property>
                             <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="99" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="0" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="name" type="java.lang.String" value="BtnInputKonsul1" noResource="true"/>
@@ -2215,7 +2273,75 @@
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="1090" y="90" width="160" height="26"/>
+                              <AbsoluteConstraints x="1090" y="120" width="160" height="26"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                        <Component class="widget.Button" name="BtnInputrad">
+                          <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="0" green="0" red="0" type="rgb"/>
+                            </Property>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/picture/XRay.png"/>
+                            </Property>
+                            <Property name="mnemonic" type="int" value="52"/>
+                            <Property name="text" type="java.lang.String" value="Permintaan Radiologi"/>
+                            <Property name="toolTipText" type="java.lang.String" value=""/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="11" style="0"/>
+                            </Property>
+                            <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="0" type="rgb"/>
+                            </Property>
+                            <Property name="horizontalAlignment" type="int" value="2"/>
+                            <Property name="name" type="java.lang.String" value="BtnInputrad" noResource="true"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnInputradActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="1090" y="30" width="160" height="26"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                        <Component class="widget.Button" name="BtnInputrad1">
+                          <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                                <BevelBorder/>
+                              </Border>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="0" green="0" red="0" type="rgb"/>
+                            </Property>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/picture/63.png"/>
+                            </Property>
+                            <Property name="mnemonic" type="int" value="52"/>
+                            <Property name="text" type="java.lang.String" value="Hasil Usg"/>
+                            <Property name="toolTipText" type="java.lang.String" value=""/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="11" style="0"/>
+                            </Property>
+                            <Property name="glassColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="0" type="rgb"/>
+                            </Property>
+                            <Property name="horizontalAlignment" type="int" value="2"/>
+                            <Property name="name" type="java.lang.String" value="BtnInputrad1" noResource="true"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnInputrad1ActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="1090" y="150" width="160" height="26"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -3980,7 +4106,7 @@
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
-                    <StringItem index="0" value="07-12-2023"/>
+                    <StringItem index="0" value="10-12-2023"/>
                   </StringArray>
                 </Property>
                 <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
