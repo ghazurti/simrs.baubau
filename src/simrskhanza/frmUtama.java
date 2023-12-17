@@ -1800,10 +1800,10 @@ public class frmUtama extends javax.swing.JFrame {
         BtnCancel.setBounds(177, 110, 105, 32);
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/yaski24.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/yaski241.png"))); // NOI18N
         jLabel6.setName("jLabel6"); // NOI18N
         internalFrame3.add(jLabel6);
-        jLabel6.setBounds(150, 0, 135, 145);
+        jLabel6.setBounds(150, -10, 135, 145);
 
         internalFrame2.add(internalFrame3);
         internalFrame3.setBounds(2, 12, 295, 155);

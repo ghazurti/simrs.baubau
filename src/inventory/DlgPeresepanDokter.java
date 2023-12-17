@@ -1083,6 +1083,11 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 ChkJln.setSelected(false);    
                 Sequel.AutoComitFalse();
                 sukses=true;
+                //tambahkan ini untuk auto increment no resep, biar tidak dobel
+                
+                Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(no_resep,4),signed)),0) from resep_obat where tgl_perawatan='" + Valid.SetTgl(DTPBeri.getSelectedItem() + "") + "' ",
+                        DTPBeri.getSelectedItem().toString().substring(6, 10) + DTPBeri.getSelectedItem().toString().substring(3, 5) + DTPBeri.getSelectedItem().toString().substring(0, 2), 4, NoResep);
+               
                 if(ubah==false){
                     if(Sequel.menyimpantf2("resep_obat","?,?,?,?,?,?,?,?,?,?","Nomer Resep",10,new String[]{
                         NoResep.getText(),"0000-00-00","00:00:00",TNoRw.getText(),KdDokter.getText(),Valid.SetTgl(DTPBeri.getSelectedItem()+""),
@@ -3822,37 +3827,7 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
             System.out.println("Notif : "+e);
         } 
         if(sukses==true){
-                 //START CODE TELEGRAM
-                    String urlString = "https://api.telegram.org/bot%s/sendMessage?chat_id=%s&text=%s&parse_mode=HTML";
-                    //token bot telegram
-                    String apiToken = koneksiDB.TOKENBOTTELE();
-                    //chat id grup telegram
-                    String chatId = koneksiDB.TELEFARMASI();
-                    String PermintaanTx=NoResep.getText();
-                    String PasienTx=TPasien.getText();
-                    String NoRMTx=TNoRw.getText();
-                    String DokterTx=NmDokter.getText();
-                    String InfoTanggal=Valid.SetTgl(DTPBeri.getSelectedItem()+"");
-                    String InfoJam=cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem();
-                    String Prgraf = "<b><u>E-RESEP DOKTER</u></b>"+
-//                            "%0ANomor Permintaan : <b>"+PermintaanTx+"</b>"+
-                            "%0APasien : <b>"+PasienTx+" ||"+NoRMTx+"</b>"+
-                            "%0ADokter Peresep : <b>"+DokterTx+"</b>"+
-                            "%0A%0A=============: WAKTU RESEP :============="+
-                            "%0ATanggal : <b>"+InfoTanggal+"</b>"+
-                            "%0AJam : <b>"+InfoJam+" WIB</b>"+
-                            "%0ALakukan Validasi di menu FARMASI";
-                    String text = Prgraf;
-                    String isiText = text.replace(" ", "%20");       
-                    urlString = String.format(urlString, apiToken, chatId, isiText );
-                      try {
-                        URL url = new URL(urlString);
-                        URLConnection conn = url.openConnection();
-                        InputStream is = new BufferedInputStream(conn.getInputStream());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                //END CODE TELEGRAM  
+                 //END CODE TELEGRAM  
             }
     }
     

@@ -1413,15 +1413,6 @@ public class koneksiDB {
         return var;
     }
      
-     public static String TELEFARMASI(){
-        try{
-            prop.loadFromXML(new FileInputStream("setting/database.xml"));
-            var=EnkripsiAES.decrypt(prop.getProperty("TELEFARMASI"));
-        }catch(Exception e){
-            var=""; 
-        }
-        return var;
-    }
      public static String URLFINGERPRINTBPJS() {
         try {
             prop.loadFromXML(new FileInputStream("setting/database.xml"));
